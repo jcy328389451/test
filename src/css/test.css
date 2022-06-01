@@ -1,0 +1,8 @@
+
+/*!轻质 */
+div{
+    width: 100px;
+    background-color: aliceblue;
+    border: 1px solid pink;
+    transition: all 2s linear 0s;
+}

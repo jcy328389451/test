@@ -1,0 +1,46 @@
+@import url(./variables.scss);
+$colors:red,
+green,
+yellow,
+blue,
+pink;
+@each $v in $colors {
+    //$v     每个元素
+    //获取值在数组中的位置  从1开始
+    $i:index($colors, $v );
+    li:nth-of-type(#{$i}){
+        width: $i*100px;
+        height: $i+100px;
+    }
+}
+h1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    span{
+        border: 1px solid yellow;
+    }
+}
+
+div{
+    @extend h1;
+    @extend h3;
+}
+h3>span{
+    border: 1px solid yellow;
+}
+h2.active{
+    border: 1px solid green;
+}
+
+/*
+语法：@extend 选择器
+注意：一般继承的选择器样式，只能用基本选择器
+继承不能使用并级选择器
+
+
+导入
+将变量和样式，定义在单独的文件中，使用时，导入对应的文件就可以使用，还有一些基本的样式也会单独写一个文件在需要的文件中导入基本样式文件
+语法：@import  路径文件
+
+*/
