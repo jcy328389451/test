@@ -1,0 +1,25 @@
+.logo>img{
+    width: 78px;
+    height: 50px;
+}
+.logo{
+    padding-left:0;
+    padding-top:0;
+}
+.register{
+    margin-top:20px;
+}
+.footer ul{
+    display:Flex;
+    justify-content: center;
+}
+.footer p{
+    text-align: center;
+    color:#fff;
+}
+.footer{
+    position:absolute;
+    bottom:0;
+    left:0;
+    background-color: rgb(20,50,87);
+}

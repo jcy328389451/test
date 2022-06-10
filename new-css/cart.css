@@ -1,0 +1,12 @@
+.footer{
+    position:static;
+}
+.cart table tbody tr td,.cart table tfoot tr td,.cart table thead tr td{
+    vertical-align: middle;
+}
+.cart .number input{
+    height:34px;
+    width:60px;
+    padding-left:8px;
+    outline:none;
+}

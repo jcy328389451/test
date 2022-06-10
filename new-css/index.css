@@ -1,0 +1,28 @@
+.logo>img{
+    width: 78px;
+    height: 50px;
+}
+.logo{
+    padding-left:0;
+    padding-top:0;
+}
+.login span{
+    font-size:20px;
+    color:#0f0;
+    padding:0 10px;
+}
+.footer{
+    position:static;
+}
+
+.beijing img,.anhui img{
+    width: 100%;
+    height: 150px;
+}
+.beijing p.introduce,.anhui p.introduce{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

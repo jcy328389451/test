@@ -1,0 +1,56 @@
+/* 布局容器 */
+.wrap{
+    width: 100%;
+}
+/* 版心 */
+.content{
+    width: 1200px;
+    margin:0 auto;
+}
+/* 修饰ul */
+.wrap ul,ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* 修饰a标签 */
+a:hover{
+    text-decoration:none;
+}
+/* 底部样式 */
+.footer ul{
+    display:Flex;
+    justify-content: center;
+}
+.footer p{
+    text-align: center;
+    color:#fff;
+}
+.footer{
+    position:absolute;
+    bottom:0;
+    left:0;
+    background-color: rgb(20,50,87);
+    padding-bottom:10px;
+}
+/* logo */
+.logo>img{
+    width: 78px;
+    height: 50px;
+}
+.logo{
+    padding-left:0;
+    padding-top:0;
+}
+.login span{
+    font-size:20px;
+    color:#0f0;
+    padding:0 10px;
+}
+
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}

@@ -1,0 +1,239 @@
+/* 放大镜 */
+.detail .enlarge:hover{
+    cursor: pointer;
+}
+
+.detail .enlarge .middle{
+    width: 400px;
+    height: 400px;
+    border:1px solid #000;
+    position:relative;
+}
+.detail .enlarge .middle .shade:hover{
+    cursor: move;
+}
+.detail .enlarge .middle .shade{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255,255,0,.7);
+    position:absolute;
+    display: none;
+    left: 0;
+    top: 0;
+}
+
+.detail .enlarge .middle>img{
+    width: 398px;
+    height: 398px;
+}
+
+.detail .enlarge .middle .big{
+    width: 400px;
+    height: 400px;
+    position:absolute;
+    right:-420px;
+    top:0;
+    overflow:hidden;
+    border:1px solid #0f0;
+    display: none;
+    z-index:1;
+}
+
+.detail .enlarge .small{
+    margin-top:20px;
+    width: 400px;
+    height: 52px;
+}
+.detail .enlarge .small .wraper{
+    width: 320px;
+    position:relative;
+    height: 52px;
+    overflow: hidden;
+    margin-left:10px;
+}
+.detail .enlarge .small ul{
+    position:absolute;
+    left: 0;
+    top: 0;
+}
+.detail .enlarge .small ul li.active{
+    border-color:#f00;
+}
+.detail .enlarge .small ul li{
+    float:left;
+    margin-right:5px;
+    width: 50px;
+    height: 50px;
+    border:1px solid transparent;
+}
+.detail .enlarge .small:hover>a{
+    visibility: visible;
+}
+.detail .enlarge .small>a{
+    width: 20px;
+    height: 50px;
+    background-color: rgba(0,0,0,.5);
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    line-height:50px;
+    font-weight: bold;
+    visibility: hidden;
+
+}
+.detail .enlarge .big img{
+    width: 1600px;
+    height: 1600px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.detail .enlarge .small ul li img{
+    width: 48px;
+    height: 48px;
+}
+/* 右边详情 */
+.detail .description{
+    margin:0 20px;
+    width: 580px;
+}
+.detail .description .price{
+    background-color: #ccc;
+    padding:15px 10px;
+}
+.detail .description .delivery{
+    margin-top:20px;
+}
+.detail .description .delivery p{
+    padding:30px 0 30px 10px;
+    background-color: #eee;
+}
+.detail .description .delivery select{
+    margin-bottom:10px;
+}
+.detail .description .addCart{
+    margin-top:20px;
+}
+.detail .description .share{
+    margin-top:20px;
+}
+.detail .description .free{
+    margin-top:20px;
+}
+.detail .description .addCart .number{
+    width:60px;
+    height: 40px;
+    position: relative;
+    float:left;
+}
+.detail .description .addCart input[name="num"]{
+    width:60px;
+    height: 40px;
+    outline:none;
+    border:none;
+    border:1px solid #ccc;
+    padding-left:6px;
+}
+.detail .description .addCart .number button{
+    position: absolute;
+    right:1px;
+    width: 20px;
+    height: 19px;
+    text-align: center;
+    line-height: 20px;
+    outline:none;
+    border:none;
+    font-size:12px;
+    background-color: #eee;
+}
+.detail .description .addCart .number button.add{
+    top:1px;
+}
+.detail .description .addCart .number button.reduce{
+    bottom:1px;
+    border-top:1px solid #ccc;
+}
+.detail .description .addBtn,.detail .description .toCart{
+    float:left;
+    margin-left:30px;
+    height: 40px;
+    width: 120px;
+    background-color: rgb(223,48,51);
+    outline:none;
+    border:none;
+    color:#fff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height:30px;
+}
+.detail .description a.toCart{
+    background-color:royalblue;
+}
+/* 猜你喜欢 */
+.detail .guess{
+    width: 180px;
+}
+
+.detail .guess ul li{
+    width: 180px;
+    text-align:center;
+    margin-bottom:15px;
+}
+.detail .guess ul li p{
+    margin:0;
+    background-color: #eee;
+    font-size: 14px;
+}
+.detail .guess ul li span{
+    color:#f00;
+    font-size: 12px;
+}
+/* 爆款推荐 */
+.recommend ul{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.recommend ul li{
+    float:left;
+}
+/* 下面详情 */
+.tab{
+    width: 950px;
+    border:1px solid #000;
+}
+.tab ul{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    height:50px;
+    background-color: #eee;
+}
+.tab ul:hover{
+    cursor: pointer;
+}
+.tab ul li{
+    width: 300px;
+    height: 50px;
+    line-height:50px;
+    text-align:center;
+    font-size:20px;
+    font-weight: bold;
+    background-color: #aaa;
+    color:#fff;
+}
+.tab ul li.active{
+    background-color: pink;
+    color:#f00;
+}
+.tab ol li{
+    width: 100%;
+    display:none;
+}
+.tab ol li.active{
+    display:block;
+}
+/* 底部 */
+.footer{
+    position:static;
+}

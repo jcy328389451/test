@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="referrer" content="never">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的购物车-小米商城</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/shoppingCart.css">
+    <script src="./lib/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./lib/layer/theme/default/layer.css">
+	<!-- 引入bootstrap -->
+	<link rel="stylesheet" href="./new-css/bootstrap.css">
+	<!-- 公共样式 -->
+	<link rel="stylesheet" href="./new-css/common.css">
+	<!-- 当前文件的css -->
+	<link rel="stylesheet" href="./new-css/cart.css">
+
+
+    <style>
+        table {
+            width: 100%;
+            color: #424242;
+        }
+
+        thead>tr {
+            height: 70px;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        tbody>tr {
+            height: 85px;
+            padding: 15px 26px 15px 0;
+            font-size: 16px;
+            border-top: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        tbody>tr td:nth-child(3) {
+            font-size: 18px;
+        }
+
+        tbody>tr td:nth-child(6) {
+            color: #ff6700;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+            text-align: center;
+        }
+
+        td img {
+            height: 80px;
+            width: 80px;
+        }
+        .login>li{
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="h-con main">
+            <div class="h-title">
+                <div class="logo fl" style="float:left;margin-top:18px"></div>
+                <div style="float:left;">
+                     <h1 style="float:left">我的购物车</h1>
+                   <a href="index.html" style="float:left;margin-left:40px;"> <h1>商城首页</h1></a> 
+                   <a href="list.html" style="float:left;margin-left:40px;"> <h1>列表页</h1></a> 
+                </div>
+               
+            </div>
+            <ul class="login" style="font-size: 16px;">
+                <li>
+                <div class="h-info fs12">
+                <a href="login.html">登录</a>
+                <span>|</span><span>&nbsp&nbsp&nbsp&nbsp</span>
+                <a href="register.html">注册</a>
+            </div> 
+                </li>
+            </ul>
+          
+        </div>
+    </header>
+
+    <!-- 购物车区 -->
+    <section>
+        <div class="s-con main" style="padding-top:0px">
+            <div class="cart clear_fix">
+                <div id="cart_goods_area">
+
+                    <div class="row">
+                        <div class="col-md-12 col-md-offset-0 ">
+    
+                            <table class="table" width="885px">
+                                <thead>
+                                    <tr >
+                                        <th style="text-align:center"><input type="checkbox" name="selectAll"></th>
+                                        <th style="text-align:center">商品图片</th>
+                                        <th style="text-align:center">商品名称</th>
+                                        <th style="text-align:center">商品价格</th>
+                                        <th style="text-align:center">商品数量</th>
+                                        <th style="text-align:center">小计</th>
+                                        <th style="text-align:center">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--将商品的id和库存存储到表单的属性中-->
+                                    <tr valign="bottom" stock="10" index="3">
+                                        <td><input type="checkbox" name="selectOne"></td>
+                                        <td><img src="http://pic.baike.soso.com/ugc/baikepic2/9736/cut-20190829145945-549423383_jpg_492_394_61627.jpg/300"
+                                                width="50" height="50"></td>
+                                        <td>故宫</td>
+                                        <td class="price">￥<span>250.00</span></td>
+                                        <td class="number">
+                                            <button class="btn btn-default reduce">-</button>
+                                            <input type="text" name="number" value="2" style="width:30px;text-align:center">
+                                            <button class="btn btn-default add">+</button>
+                                        </td>
+                                        <td class="subtotal">￥<span>500</span></td>
+                                        <td><button class="btn btn-danger remove">移除</button></td>
+                                    </tr>
+    
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td><input type="checkbox" name="selectAll"></td>
+                                        <td colspan="2">商品总数：<span class="totalNum">0</span></td>
+                                        <td colspan="2">商品总价：<span class="totalPrice">0</span></td>
+                                        <td><a class="btn btn-primary" href="list.html">回列表页</a></td>
+                                        <td><a class="btn btn-primary" href="list.html">回列表页</a></td>
+                                        <td><a class="btn btn-primary" href="order.html">去结算</a></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+    
+    
+                        </div>
+    
+                    </div>
+                </div>
+
+                <!-- <div class="cart-bg fl"></div> -->
+                <!-- <div class="cart-info fl">
+                    <h2>你的购物车还是空的!</h2>
+                    <p>登录后将显示您之前加入的商品</p>
+                    <div class="cart-btns fs14 clear_fix">
+                        <a href="login.html"><div class="cart-btn cart-login fl">立即登录</div></a>
+                        <a href="list.html"><div class="cart-btn cart-register fl">马上去购物</div></a>
+                        
+                    </div>
+                </div> -->
+            </div>
+<!-- 
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:110px">序号</th>
+                        <th style="width:120px">图片</th>
+                        <th style="width:380px">商品名称</th>
+                        <th style="width:158px">单价</th>
+                        <th style="width:210px">数量</th>
+                        <th style="width:200px">小计</th>
+                        <th style="width:80px">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tab"></tbody>
+            </table> -->
+
+            <!-- <div class="cart-bar">
+                <p class="fl">共<span class="buy-number"></span>件商品</p>
+                <div class="pay fr">去结算</div>
+                <p class="fr">合计:<span class="total-money"></span>元</p>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- 推荐区 -->
+    <section>
+        <div class="r-con main">
+            <div class="recommend">
+                <div class="r-title">
+                    <h3>为您推荐</h3>
+                </div>
+                <ul class="r-items">
+                    <li class="item fs14">
+                        <img src="images/推荐1.webp" alt="">
+                        <p class="item-name">Note 9 4G</p>
+                        <p class="item-price">899元</p>
+                        <p class="item-praise">72.5万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐2.webp" alt="">
+                        <p class="item-name">Note 9 5G</p>
+                        <p class="item-price">1199元</p>
+                        <p class="item-praise">72.5万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐3.webp" alt="">
+                        <p class="item-name">Redmi Note 10 Pro</p>
+                        <p class="item-price">1599元</p>
+                        <p class="item-praise">23.3万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐4.webp" alt="">
+                        <p class="item-name">Redmi K40 游戏增强版</p>
+                        <p class="item-price">1999元</p>
+                        <p class="item-praise">8.5万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐5.webp" alt="">
+                        <p class="item-name">Redmi 9A</p>
+                        <p class="item-price">499元</p>
+                        <p class="item-praise">66.8万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐6.webp" alt="">
+                        <p class="item-name">Note 9 Pro 5G</p>
+                        <p class="item-price">1399元</p>
+                        <p class="item-praise">72.5万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐7.webp" alt="">
+                        <p class="item-name">小米11</p>
+                        <p class="item-price">3799元</p>
+                        <p class="item-praise">23万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐8.webp" alt="">
+                        <p class="item-name">Redmi K40</p>
+                        <p class="item-price">1999元</p>
+                        <p class="item-praise">56.2万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐9.webp" alt="">
+                        <p class="item-name">黑鲨4</p>
+                        <p class="item-price">2499元</p>
+                        <p class="item-praise">7.9万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐10.webp" alt="">
+                        <p class="item-name">Redmi Note 10 5G</p>
+                        <p class="item-price">1099元</p>
+                        <p class="item-praise">23.3万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐11.webp" alt="">
+                        <p class="item-name">Redmi K40 Pro+</p>
+                        <p class="item-price">3399元</p>
+                        <p class="item-praise">56.2万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐12.webp" alt="">
+                        <p class="item-name">Redmi K40 Pro</p>
+                        <p class="item-price">2499元</p>
+                        <p class="item-praise">56.2万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+
+                    <li class="item fs14">
+                        <img src="images/推荐13.webp" alt="">
+                        <p class="item-name">黑鲨4 Pro</p>
+                        <p class="item-price">3999元</p>
+                        <p class="item-praise">7.9万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐14.webp" alt="">
+                        <p class="item-name">小米10S</p>
+                        <p class="item-price">2999元</p>
+                        <p class="item-praise">14.7万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+
+                    <li class="item fs14">
+                        <img src="images/推荐15.webp" alt="">
+                        <p class="item-name">Redmi K30 至尊纪念版</p>
+                        <p class="item-price">1999元</p>
+                        <p class="item-praise">61.8万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐16.webp" alt="">
+                        <p class="item-name">腾讯黑鲨游戏手机3S</p>
+                        <p class="item-price">3999元</p>
+                        <p class="item-praise">2.8万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐17.webp" alt="">
+                        <p class="item-name">小米11 青春版</p>
+                        <p class="item-price">2099元</p>
+                        <p class="item-praise">8.9万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐18.webp" alt="">
+                        <p class="item-name">小米11 Pro</p>
+                        <p class="item-price">4499元</p>
+                        <p class="item-praise">6.9万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐19.webp" alt="">
+                        <p class="item-name">Xiaomi MIX 4</p>
+                        <p class="item-price">4999元</p>
+                        <p class="item-praise">1810人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+                    <li class="item fs14">
+                        <img src="images/推荐20.webp" alt="">
+                        <p class="item-name">小米11 Uitra</p>
+                        <p class="item-price">5499元</p>
+                        <p class="item-praise">7.4万人好评</p>
+                        <div class="item-btn">
+                            加入购物车
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="f-con main">
+            <ul class="f-service">
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont  icon-gongju"></i>
+                        预约维修服务
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont  icon-7tiantuihuanhuo"></i>
+                        7天无理由退货
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont  icon-15tianwuliyoutuihuo"></i>
+                        15天免费换货
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont  icon-liwu"></i>
+                        满69包邮
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont  icon-dingwei"></i>
+                        520余家售后网点
+                    </a>
+                </li>
+            </ul>
+
+            <div class="f-links clear_fix">
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd><a href="javascipt:;">账户管理</a></dd>
+                    <dd><a href="javascipt:;">购物指南</a></dd>
+                    <dd><a href="javascipt:;">订单操作</a></dd>
+                </dl>
+                <dl>
+                    <dt>服务支持</dt>
+                    <dd><a href="javascipt:;">售后政策</a></dd>
+                    <dd><a href="javascipt:;">自助服务</a></dd>
+                    <dd><a href="javascipt:;">相关下载</a></dd>
+                </dl>
+                <dl>
+                    <dt>线下门店</dt>
+                    <dd><a href="javascipt:;">小米之家</a></dd>
+                    <dd><a href="javascipt:;">服务网点</a></dd>
+                    <dd><a href="javascipt:;">授权体验店</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于小米</dt>
+                    <dd><a href="javascipt:;">了解小米</a></dd>
+                    <dd><a href="javascipt:;">加入小米</a></dd>
+                    <dd><a href="javascipt:;">投资者关系</a></dd>
+                    <dd><a href="javascipt:;">企业社会责任</a></dd>
+                    <dd><a href="javascipt:;">廉洁举报</a></dd>
+                </dl>
+                <dl>
+                    <dt>关注我们</dt>
+                    <dd><a href="javascipt:;">新浪微博</a></dd>
+                    <dd><a href="javascipt:;">官方微信</a></dd>
+                    <dd><a href="javascipt:;">联系我们</a></dd>
+                    <dd><a href="javascipt:;">公益基金会</a></dd>
+                </dl>
+                <dl>
+                    <dt>特色服务</dt>
+                    <dd><a href="javascipt:;">F码通道</a></dd>
+                    <dd><a href="javascipt:;">礼物码</a></dd>
+                    <dd><a href="javascipt:;">防伪查询</a></dd>
+                </dl>
+                <div class="f-tel">
+                    <p class="phone">400-100-5678</p>
+                    <p>8:00-18:00（仅收市话费）</p>
+                    <div class="f-btn fs12">
+                        <i class="iconfont  icon-xinxi"></i>
+                        人工客服
+                    </div>
+                    <div class="follow fs12">
+                        关注小米：
+                        <i class="iconfont  icon-weibo"></i>
+                        <i class="iconfont  icon-weixin1">
+                            <img src="images/wx-img.png" alt="">
+                        </i>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-info clear_fix">
+                <div class="f-logo fl"></div>
+                <div class="f-sites fl fs12">
+                    <p class="sites">
+                        <a href="javascript:;">小米商城</a>
+                        <span>|</span>
+                        <a href="javascript:;">MIUI</a>
+                        <span>|</span>
+                        <a href="javascript:;">米家</a>
+                        <span>|</span>
+                        <a href="javascript:;">米聊</a>
+                        <span>|</span>
+                        <a href="javascript:;">多看</a>
+                        <span>|</span>
+                        <a href="javascript:;">游戏</a>
+                        <span>|</span>
+                        <a href="javascript:;">政企服务</a>
+                        <span>|</span>
+                        <a href="javascript:;">小米天猫店</a>
+                        <span>|</span>
+                        <a href="javascript:;">小米集团隐私政策</a>
+                        <span>|</span>
+                        <a href="javascript:;">小米公司儿童信息保护规则</a>
+                        <span>|</span>
+                        <a href="javascript:;">小米商城隐私政策</a>
+                        <span>|</span>
+                        <a href="javascript:;">小米商城用户协议</a>
+                        <span>|</span>
+                        <a href="javascript:;">问题反馈</a>
+                        <span>|</span>
+                        <a href="javascript:;">Select Location</a>
+                    </p>
+                    <p class="sites">
+                        <a href="javascript:;">北京互联网法院法律服务工作站</a>
+                        <span>|</span>
+                        <a href="javascript:;">中国消费者协会</a>
+                        <span>|</span>
+                        <a href="javascript:;">北京市消费者协会</a>
+                    </p>
+                    <p class="f-copy">
+                        &copy;
+                        <a href="javascript:;">mi.com</a>京ICP证110507号
+                        <a href="javascript:;">京ICP备10046444号</a>
+                        <a href="javascript:;">京公网安备11010802020134号</a>
+                        <a href="javascript:;">京网文[2020]0276-042号</a>
+                        <br>
+                        <a href="javascript:;">（京）网械平台备字（2018）第00005号</a>
+                        <a href="javascript:;">互联网药品信息服务资格证
+                            (京)-非经营性-2014-0090</a>
+                        <a href="javascript:;">营业执照</a>
+                        <a href="javascript:;">医疗器械质量公告</a>
+                        <br>
+                        <a href="javascript:;">增值电信业务许可证</a>&nbsp;网络食品经营备案 京食药网食备202010048 &nbsp;
+                        <a href="javascript:;">食品经营许可证</a>
+                        <br>
+                        违法和不良信息举报电话：171-5104-4404&nbsp;
+                        <a href="javascript:;">知识产权侵权投诉</a>&nbsp;本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+                    </p>
+                    <div class="sites-pic">
+                        <a href="javascript:;"><img src="images/copy1.png" alt=""></a>
+                        <a href="javascript:;"><img src="images/copy2.png" alt=""></a>
+                        <a href="javascript:;"><img src="images/copy3.png" alt=""></a>
+                        <a href="javascript:;"><img src="images/copy4.png" alt=""></a>
+                        <a href="javascript:;"><img src="images/copy5.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slogan"></div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+<script src="./lib/bootstrap.js"></script>
+<script src="./lib/layer/layer.js"></script>
+<!-- 引入cookie的js -->
+
+
+<!-- 引入js的库 -->
+
+
+
+<script src="./lib/layer/layer.js"></script>
+<!-- 引入cookie的js -->
+<script src="./utils/cookie.js"></script>
+<script src="./utils/ajax.js"></script>
+<script src="./js/newChecklogin.js"></script>
+<script src="./js/newCart.js"></script>
+<script src="./js/newCartCheck.js"></script>
+

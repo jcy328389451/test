@@ -1,0 +1,19 @@
+#search{
+    position: relative;
+}
+#search-box{
+    /* display: none; */
+    width: 245px;
+    /* height: 320px; */
+    position:absolute;
+    background-color:#eee;
+    z-index: 999;
+    overflow: hidden;
+    opacity: .8;
+    max-height:320px;
+    cursor: pointer;
+}
+#search-box>li{
+    z-index: 19999;
+    height: 40px;
+}

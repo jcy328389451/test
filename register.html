@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小虎账号-注册</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/register.css">
+
+
+    <link rel="stylesheet" href="./lib/layer/theme/default/layer.css">
+</head>
+
+<body>
+    <!-- 登录页面 -->
+    <div class="login">
+        <!-- 左侧背景图 -->
+        <div class="login-bg"></div>
+
+        <!-- 右侧内容区 -->
+        <div class="login-content">
+            <!-- 头部 -->
+            <div class="l-header">
+                <div class="h-left">
+                    <a href="index.html"><div class="logo fl"></div>
+                        <h1>小米账号</h3>
+                        </a>
+                </div>
+                <div class="h-right">
+                    <a href="javascript:;">用户协议</a>
+                    <a href="javascript:;">隐私政策</a>
+                    <a href="javascript:;">帮助中心</a>
+                    <span>|</span>
+                    <a href="javascript:;">中文简体</a>
+                </div>
+            </div>
+
+            <!-- 注册表单 -->
+            <div class="login-card-wrapper" style="  padding-top:0px;
+            margin-top: -40px;">
+                <div class="login-card">
+                    <div class="login-nav">
+                        <a href="login.html">登录</a>
+                        <a class="active" href="javascript:;">注册</a>
+                    </div>
+                    <form class="mi-form">
+                        <input type="text" name="username" placeholder="用户名">
+                        <input type="password" name="password" placeholder="密码">
+                        <input type="password" name="repass" placeholder="确认密码">
+                        性别:<input type="radio" name="sex" value="男" checked>男
+                        <input type="radio" name="sex" value="女">女
+                        <input type="text" name="tel" placeholder="手机号">
+                        <button type="button" class="submit">注册</button>
+                    </form>
+
+                    <div class="mi-tips">
+                        <a href="javascript">收不到验证码?</a>
+                    </div>
+                    <div class="agreement">
+                        <input type="checkbox" name="agree">
+                        已阅读并同意小米帐号
+                        <a class="" href="javascript:;">用户协议</a>
+                        和
+                        <a class="" href="javascript:;">隐私政策</a>
+                    </div>
+
+                    <div class="other-login">
+                        <p>其他方式登录</p>
+                        <div>
+                            <i class="iconfont icon-qq"></i>
+                            <i class="iconfont icon-weibo1"></i>
+                            <i class="iconfont icon-zhifubao"></i>
+                            <i class="iconfont icon-weixin"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 版权 -->
+            <div class="mi-copy">
+                小米公司版权所有-京ICP备10046444-<a href="javascript:;">京公网安备11010802020134号</a>-京ICP证110507号
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        $(function () {
+            $(".mi-form").submit(function () {
+                if ($(".agreement").find("input").is(":checked")) {
+                    $.ajax({
+                        url: "/account/reg",
+                        type: "post",
+                        data: $(".mi-form").serialize()
+                    }).then(function (res) {
+                        layer.msg(res.msg);
+                    })
+                } else {
+                    layer.msg("请先阅读并同意小米用户协议")
+                }
+                return false
+            })
+        })
+    </script> -->
+</body>
+
+</html>
+
+<!-- 引入js的库 -->
+<script src="./lib/jquery.min.js"></script>
+<!-- 引入bootstrap.js，bootstrap的js需要依赖一个js库 -->
+<script src="./lib/bootstrap.js"></script>
+<!-- 引入ajax文件 -->
+<script src="./utils/ajax.js"></script>
+<!-- 引入layer -->
+<script src="./lib/layer/layer.js"></script>
+<script src="./js/newRegister.js"></script>
